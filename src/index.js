@@ -93,7 +93,6 @@ function __createInjectorFunction({ query, resourcePath }: WebpackContext, sourc
     })();
     /*!************************************************************************/
 
-    console.log('accessible?', options.exportInjected)
     if (options.exportInjected) {
       if (module.exports.__esModule) {
         module.exports.default.__injected__ = __injected__
