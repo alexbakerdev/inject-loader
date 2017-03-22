@@ -1,3 +1,28 @@
+# This is a fork of [inject-loader](https://github.com/plasticine/inject-loader)
+
+Add configurable options to webpack for inject loader
+### `validate`: 
+How to handle validation of dependencies. A valid injection is for a module that module depends on. Possible values:
+  * `'error'` - throw if invalid injection 
+  * `'warning'` - log warning
+  * `false` - silently don't inject invalid dependencies
+### `exportInjected`: `boolean`
+Whether to export module with `__injected__` property that contains injected modules for that module. 
+
+e.g. :
+```js
+module.exports = {
+...
+  injectLoader: { 
+    validate: false,
+    exportInjected: true
+  }
+...
+}
+```
+### Other changes
+* Fixed integration tests, by making them use project karma install rather than global.
+
 # inject-loader
 
 [![build status](https://img.shields.io/travis/plasticine/inject-loader/master.svg?style=flat-square)](https://travis-ci.org/plasticine/inject-loader) [![Gemnasium](https://img.shields.io/gemnasium/plasticine/inject-loader.svg?style=flat-square)](https://gemnasium.com/plasticine/inject-loader) [![npm version](https://img.shields.io/npm/v/inject-loader.svg?style=flat-square)](https://www.npmjs.com/package/inject-loader) [![npm downloads](https://img.shields.io/npm/dm/inject-loader.svg?style=flat-square)](https://www.npmjs.com/package/inject-loader)
